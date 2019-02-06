@@ -1,0 +1,14 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run: yarn install --frozen-lockfile
+      - run: yarn lint:ci
+      - run: yarn compile
+      - run: yarn coverage:ci
+      - run: yarn test:prettier
+      - run: yarn codecov

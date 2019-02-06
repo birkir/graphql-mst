@@ -3,7 +3,7 @@
     "outDir": "./lib",
     "moduleResolution": "node",
     "jsx": "preserve",
-    "noUnusedLocals": false, // @todo fix
+    "noUnusedLocals": true,
     "pretty": true,
     "esModuleInterop": true,
     "strictNullChecks": true,

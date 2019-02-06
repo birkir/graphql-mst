@@ -4,9 +4,17 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "dev": "ts-node src",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "clean": "rimraf {lib,node_modules,reports,yarn.lock}",
+    "codecov": "codecov",
+    "compile": "tsc",
+    "coverage": "yarn testonly --coverage",
+    "lint": "tslint -p .",
+    "prepublishOnly": "yarn compile",
+    "prettier": "prettier --write '**/*.{json,md,js,jsx,ts,tsx}'",
+    "test:prettier": "prettier --list-different '**/*.{json,md,js,jsx,ts,tsx}'",
+    "test:watch": "jest --watch",
+    "test": "yarn lint && yarn compile && yarn coverage && yarn test:prettier",
+    "testonly": "jest --runInBand"
   },
   "author": "Birkir Gudjonsson <birkir.gudjonsson@gmail.com",
   "license": "MIT",
@@ -15,17 +23,57 @@
     "mobx": "5.9.0",
     "mobx-state-tree": "3.10.2"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "printWidth": 100
+  },
+  "renovate": {
+    "extends": [
+      "config:base",
+      "schedule:weekly"
+    ],
+    "automerge": true,
+    "major": {
+      "automerge": false
+    }
+  },
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node"
   },
   "devDependencies": {
+    "@commitlint/cli": "7.5.0",
+    "@commitlint/config-conventional": "7.5.0",
     "@types/graphql": "14.0.5",
     "@types/jest": "24.0.0",
     "@types/node": "10.12.21",
+    "codecov": "3.1.0",
+    "husky": "1.3.1",
     "jest": "24.1.0",
+    "prettier": "1.16.4",
+    "rimraf": "2.6.3",
     "ts-jest": "23.10.5",
     "ts-node": "8.0.2",
+    "tslint": "5.12.1",
+    "tslint-config-prettier": "1.18.0",
     "typescript": "3.3.1"
   }
 }

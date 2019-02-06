@@ -1,5 +1,4 @@
-graphql-mst
-===========
+# graphql-mst
 
 Convert GraphQL Schema to mobx-state-tree models.
 
@@ -16,6 +15,8 @@ npm install graphql-mst
 ### Usage
 
 ```ts
+import { generateFromSchema } from 'graphql-mst';
+
 const schema = `
   type Foo {
     a: String

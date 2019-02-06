@@ -1,5 +1,14 @@
 import { generateFromSchema } from '../src/index';
-import { isModelType, isFrozenType, types, IModelType, IAnyType, ISimpleType, UnionStringArray, ITypeUnion} from 'mobx-state-tree';
+import {
+  isModelType,
+  isFrozenType,
+  types,
+  IModelType,
+  IAnyType,
+  ISimpleType,
+  UnionStringArray,
+  ITypeUnion,
+} from 'mobx-state-tree';
 
 describe('graphql-mst', () => {
   it('should export a generateFromSchema function', () => {
@@ -69,7 +78,6 @@ describe('graphql-mst', () => {
     }
   });
 
-
   it('should convert unions', () => {
     const schema = `
       type Foo { foo: String }
@@ -106,7 +114,7 @@ describe('graphql-mst', () => {
       e: ['one', 'two'],
       f: {
         foo: 'bar',
-      }
+      },
     });
     expect(test).toMatchSnapshot();
   });
