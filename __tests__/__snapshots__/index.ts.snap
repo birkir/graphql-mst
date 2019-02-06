@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`graphql-mst should convert complex type 1`] = `
+Object {
+  "a": "string",
+  "b": "id",
+  "c": 1,
+  "d": 1.1,
+  "e": Array [
+    "one",
+    "two",
+  ],
+  "f": Object {
+    "foo": "bar",
+  },
+}
+`;

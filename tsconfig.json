@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib",
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "noUnusedLocals": false, // @todo fix
+    "pretty": true,
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "module": "commonjs",
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "lib": ["dom", "es6", "es2015", "es2017", "esnext"]
+  },
+  "include": ["./src"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
