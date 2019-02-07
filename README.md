@@ -8,7 +8,7 @@
 
 Convert GraphQL Schema to mobx-state-tree models.
 
-See demos in [tests folder](https://github.com/birkir/graphql-mst/blob/master/__testss__/index.ts)
+See demos in [tests folder](https://github.com/birkir/graphql-mst/blob/master/__tests__/index.ts)
 
 ### Installing
 
