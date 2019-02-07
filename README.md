@@ -44,3 +44,40 @@ const bar = Bar.create({
   c: [foo, { a: 'World', b: 20 }],
 });
 ```
+
+#### Identifiers
+
+```ts
+const schema = `
+  type Foo {
+    userId: ID!
+    fooId: ID!
+  }
+`;
+
+const config = {
+  Foo: {
+    identifier: 'fooId', // this will be used as identifier for model 'Foo'
+  },
+};
+
+const { Foo } = generateFromSchema(schema, config);
+
+const lookup = types
+  .model({ items: types.map(Test) })
+  .actions(self => ({ add: item => self.items.put(item) }))
+  .create({ items: {} });
+
+lookup.put({ userId: 10, fooId: 1 });
+lookup.put({ userId: 20, fooId: 2 });
+
+lookup.items.get(1); // { userId: 10, fooId: 1 }
+lookup.items.get(2); // { userId: 20, fooId: 2 }
+```
+
+### TODO and thoughts
+
+- Configure map type instead of array type
+- Default values for arguments as `types.optional`
+- reference types?
+- Date scalar? Custom scalar?
