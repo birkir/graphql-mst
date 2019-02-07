@@ -18,7 +18,7 @@ describe('graphql-mst', () => {
   it('should parse schema', () => {
     const schema = `
       type Test {
-        foo: String
+        foo: String!
       }
     `;
 

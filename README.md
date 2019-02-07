@@ -2,7 +2,7 @@
 [![npm](https://img.shields.io/npm/v/graphql-mst.svg?maxAge=2592000)](https://www.npmjs.com/package/graphql-mst)
 [![codecov](https://codecov.io/gh/birkir/graphql-mst/branch/master/graph/badge.svg)](https://codecov.io/gh/birkir/graphql-mst)
 [![CircleCI](https://circleci.com/gh/birkir/graphql-mst.svg?style=shield)](https://circleci.com/gh/birkir/graphql-mst)
-[![MIT license](https://img.shields.io/github/license/graphql-mst/prime.svg)](https://opensource.org/licenses/MIT)
+[![MIT license](https://img.shields.io/github/license/birkir/graphql-mst.svg)](https://opensource.org/licenses/MIT)
 
 # graphql-mst
 
