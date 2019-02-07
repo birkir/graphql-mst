@@ -24,6 +24,9 @@
       "pre-commit": "lint-staged"
     }
   },
+  "files": [
+    "lib"
+  ],
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
