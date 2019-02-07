@@ -64,7 +64,7 @@ const config = {
 const { Foo } = generateFromSchema(schema, config);
 
 const lookup = types
-  .model({ items: types.map(Test) })
+  .model({ items: types.map(Foo) })
   .actions(self => ({ add: item => self.items.put(item) }))
   .create({ items: {} });
 
